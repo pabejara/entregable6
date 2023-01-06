@@ -8,8 +8,7 @@ const Login = () => {
 
   const submit = (data) => {
     const URL = 'https://e-commerce-api.academlo.tech/api/v1/users/login';
-    axios
-      .post(URL, data)
+    axios.post(URL, data)
       .then((res) => {
         console.log(res.data.data);
         localStorage.setItem('token', res.data.data.token);

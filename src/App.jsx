@@ -15,10 +15,10 @@ function App() {
 
   const dispatch = useDispatch()
 
-  // useEffect(() => {
-  //   dispatch(getAllProducts())
-  //   dispatch(getUserCart())
-  // }, [])
+  useEffect(() => {
+    dispatch(getAllProducts())
+    dispatch(getUserCart())
+  }, [])
 
   // este es el codigo para crear un nuevo usuario
   // useEffect(() => {
@@ -32,7 +32,7 @@ function App() {
   //     role: "admin"
   //   }
 
-  //   axios.get(URL, data)
+  //   axios.post(URL, data)
   //   .then(res => res.data)
   //   .catch(err => console.log(err))
   // }, [])

@@ -20,6 +20,6 @@ export const getUserCart = () => (dispatch) => {
         .then(res => dispatch(setCartGlobal(res.data.data.cart.products)))
         .catch(err =>{
             console.log(err)
-            dispatch(setCartGlobal(null))
+            // dispatch(setCartGlobal(null))
         } )
 }

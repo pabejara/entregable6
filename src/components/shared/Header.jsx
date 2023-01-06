@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const Header = () => {
   return (
-    <Header>
+    <header>
       <nav>
         <ul>
             <li><Link to='/'>E-commerce</Link></li>
@@ -12,7 +12,7 @@ const Header = () => {
             <li><Link to='/cart'>Cart</Link></li>
         </ul>
       </nav>
-    </Header>
+    </header>
   )
 }
 
