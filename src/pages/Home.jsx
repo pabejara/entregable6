@@ -1,6 +1,8 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import CardProduct from '../components/Home/CardProduct'
+import FilterCategory from '../components/Home/FilterCategory'
+import './styles/home.css'
 
 const Home = () => {
 
@@ -8,25 +10,31 @@ const Home = () => {
 
     const products = useSelector(state => state.products)
 
+    useEffect(() => {
+        setProductsFilter(products)
+    }, [products])
+    
+
     const handleChange = e => {
-        console.log(e.trget.value)
-        const filter = products?.filter(prod => prod.title.toLowerCase() === e.trget.value.toLowerCase().trim()) 
+        const inputValue = e.target.value.toLowerCase().trim()
+        const filter = products?.filter(prod => prod.title.toLowerCase().includes(inputValue))
         setProductsFilter(filter)
     }
 
     return (
         <div>
             <input onChange={handleChange} type="text" />
-        <div className='products-container'>
-            {
-                products?.map(product => (
-                    <CardProduct
-                        key={product.id}
-                        product={product}
-                    />
-                ))
-            }
-        </div>
+            <FilterCategory />
+            <div className='products-container'>
+                {
+                    productsFilter?.map(product => (
+                        <CardProduct
+                            key={product.id}
+                            product={product}
+                        />
+                    ))
+                }
+            </div>
         </div>
 
     )
