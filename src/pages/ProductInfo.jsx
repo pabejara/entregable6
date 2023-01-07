@@ -28,7 +28,7 @@ const ProductInfo = () => {
     }
   }, [allProducts, product])
 
-  console.log(similarProducts)
+  // console.log(similarProducts)
 
 
   return (
