@@ -28,7 +28,7 @@ const dispatch = useDispatch()
         <h3>{product.title}</h3>
       </header>
       <button onClick={handleDelete} >
-      {/* <i className="fa-regular fa-trash-can"></i> */}
+      {<i className="fa-regular fa-trash-can"></i> }
       </button>
       <div>{product.productsInCart.quantity}</div>
       <div>

@@ -1,8 +1,10 @@
 import axios from 'axios'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 
 const Login = () => {
+
+  const [isLogged, setIsLogged] = useState(false)
 
   const {handleSubmit, register, reset} = useForm()
 
@@ -12,13 +14,23 @@ const Login = () => {
       .then((res) => {
         console.log(res.data.data);
         localStorage.setItem('token', res.data.data.token);
+        setIsLogged(true)
       })
       .catch((err) => console.log(err));
     reset({
       email: '',
       password: '',
-    });
-  };
+    })
+  }
+
+  useEffect(() => {
+    const condition = localStorage.getItem('token') ? true : false
+    setIsLogged(condition)
+  }, [])
+  
+  if(isLogged) {
+    <h1>User Logged </h1>
+  }
 
 
   return (

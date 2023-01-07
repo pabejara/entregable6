@@ -21,6 +21,11 @@ const FilterPrice = (setInputPrice) => {
                 from: inputFrom,
                 to: Infinity
             })
+        }else {
+            setInputPrice({
+                from: 0,
+                to: Infinity
+            })
         }
     }
 
