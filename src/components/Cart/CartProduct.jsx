@@ -5,10 +5,9 @@ import { getUserCart } from '../../store/slices/cart.slice'
 import getConfig from '../../utils/getConfig'
 import './styles/cartProduct.css'
 
+const CartProduct = ({ product }) => {
 
-const CartProduct = ({product}) => {
-
-const dispatch = useDispatch()
+  const dispatch = useDispatch()
 
   const handleDelete = () => {
     const URL = `https://e-commerce-api.academlo.tech/api/v1/cart/${product.id}`
@@ -20,7 +19,6 @@ const dispatch = useDispatch()
       .catch(err => console.log(err))
   }
 
-
   return (
     <article className='cart-product'>
       <header>
@@ -28,7 +26,7 @@ const dispatch = useDispatch()
         <h3>{product.title}</h3>
       </header>
       <button onClick={handleDelete} >
-      {<i className="fa-regular fa-trash-can"></i> }
+        {<i className="fa-regular fa-trash-can"></i>}
       </button>
       <div>{product.productsInCart.quantity}</div>
       <div>

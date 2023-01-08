@@ -3,9 +3,9 @@ import { Navigate, Outlet } from 'react-router-dom'
 
 const ProtectedRoutes = () => {
 
-    if(localStorage.getItem('token')) {
+    if (localStorage.getItem('token')) {
         // estoy logueed
-        return <Outlet /> 
+        return <Outlet />
     } else {
         return <Navigate to='/login' />
     }

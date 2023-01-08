@@ -10,7 +10,7 @@ const Login = () => {
 
   const [isLogged, setIsLogged] = useState(false)
 
-  const {handleSubmit, register, reset} = useForm()
+  const { handleSubmit, register, reset } = useForm()
 
   const submit = (data) => {
     const URL = 'https://e-commerce-api.academlo.tech/api/v1/users/login';
@@ -37,12 +37,12 @@ const Login = () => {
     localStorage.removeItem('token')
     setIsLogged(false)
   }
-  
-  if(isLogged) {
+
+  if (isLogged) {
     return (
       <div>
-         <h3 className='logged' >User Logged👌</h3>
-         <button onClick={handleLogout} >Logout</button>
+        <h3 className='logged' >User Logged👌</h3>
+        <button onClick={handleLogout} >Logout</button>
       </div>
     )
   }
@@ -51,7 +51,7 @@ const Login = () => {
     <div className='login'  >
       <h3>Welcome! Enter your email and</h3>
       <h3>password to continue</h3>
-      <form  onSubmit={handleSubmit(submit)} >
+      <form onSubmit={handleSubmit(submit)} >
         <div  >
           <label htmlFor="email">Email</label>
           <input type="text" id='email' {...register("email")} />

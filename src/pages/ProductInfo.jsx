@@ -22,14 +22,13 @@ const ProductInfo = () => {
   }, [id])
 
   useEffect(() => {
-    if(allProducts && product) {
+    if (allProducts && product) {
       const pivot = allProducts.filter(prod => prod.category.name === product.category)
       setSimilarProducts(pivot)
     }
   }, [allProducts, product])
 
   // console.log(similarProducts)
-
 
   return (
     <div>
@@ -39,7 +38,7 @@ const ProductInfo = () => {
         <div className='similar-products-container'>
           {
             similarProducts?.map(simProd => {
-              if(simProd.title !== product.title){
+              if (simProd.title !== product.title) {
                 return (
                   <CardProduct
                     key={simProd.id}

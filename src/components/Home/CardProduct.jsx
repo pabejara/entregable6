@@ -6,7 +6,6 @@ import axios from 'axios'
 import { useDispatch } from 'react-redux'
 import getConfig from '../../utils/getConfig'
 
-
 const CardProduct = ({ product }) => {
 
   const navigate = useNavigate()
@@ -30,7 +29,6 @@ const CardProduct = ({ product }) => {
       })
       .catch(err => console.log(err))
   }
-
 
   return (
     <article className='product' onClick={handleClick}>

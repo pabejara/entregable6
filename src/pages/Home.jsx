@@ -20,7 +20,6 @@ const Home = () => {
     useEffect(() => {
         setProductsFilter(products)
     }, [products])
-    
 
     const handleChange = e => {
         const inputValue = e.target.value.toLowerCase().trim()
@@ -36,23 +35,22 @@ const Home = () => {
             <h3 className='selection' >Select by word</h3>
             <input value={inputValue} onChange={handleChange} type="text" />
             <FilterPrice setInputPrice={setInputPrice} />
-            <FilterCategory setInputValue={setInputValue}/>
+            <FilterCategory setInputValue={setInputValue} />
             <ToOrderProducts />
             <div className='products-container'>
                 {
                     productsFilter?.filter(filterCallBack).length !== 0 ?
-                    productsFilter?.filter(filterCallBack).map(product => (
-                        <CardProduct
-                            key={product.id}
-                            product={product}
-                        />
-                    ))
-                    :
-                    <h1>Not exist product to this filter</h1>
+                        productsFilter?.filter(filterCallBack).map(product => (
+                            <CardProduct
+                                key={product.id}
+                                product={product}
+                            />
+                        ))
+                        :
+                        <h1>Not exist product to this filter</h1>
                 }
             </div>
         </div>
-
     )
 }
 

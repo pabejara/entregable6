@@ -4,12 +4,12 @@ import { useDispatch } from 'react-redux'
 import { getUserCart } from '../../store/slices/cart.slice'
 import getConfig from '../../utils/getConfig'
 
-const ProductDescription = ({product}) => {
+const ProductDescription = ({ product }) => {
 
   const [counter, setCounter] = useState(1)
 
   const handleMinus = () => {
-    if(counter - 1 > 0){
+    if (counter - 1 > 0) {
       setCounter(counter - 1)
     }
   }
@@ -28,12 +28,12 @@ const ProductDescription = ({product}) => {
     }
 
     axios.post(URL, data, getConfig())
-    .then(res => {
-      console.log(res.data)
-      dispatch(getUserCart())
-    })
+      .then(res => {
+        console.log(res.data)
+        dispatch(getUserCart())
+      })
 
-    .catch(err => console.log(err))
+      .catch(err => console.log(err))
   }
 
   return (

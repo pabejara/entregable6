@@ -21,7 +21,7 @@ const FilterPrice = (setInputPrice) => {
                 from: inputFrom,
                 to: Infinity
             })
-        }else {
+        } else {
             setInputPrice({
                 from: 0,
                 to: Infinity
@@ -29,22 +29,22 @@ const FilterPrice = (setInputPrice) => {
         }
     }
 
-        return (
-            <section>
-                <h3>Select by Price</h3>
-                <form onSubmit={handleSubmit}>
-                    <div>
-                        <label htmlFor="from">From</label>
-                        <input type="number" id='from' />
-                    </div>
-                    <div>
-                        <label htmlFor="to">To</label>
-                        <input type="number" id='to' />
-                    </div>
-                    <button>Apply</button>
-                </form>
-            </section>
-        )
-    }
+    return (
+        <section>
+            <h3>Select by Price</h3>
+            <form onSubmit={handleSubmit}>
+                <div>
+                    <label htmlFor="from">From</label>
+                    <input type="number" id='from' />
+                </div>
+                <div>
+                    <label htmlFor="to">To</label>
+                    <input type="number" id='to' />
+                </div>
+                <button>Apply</button>
+            </form>
+        </section>
+    )
+}
 
-    export default FilterPrice
+export default FilterPrice

@@ -4,15 +4,15 @@ import { ascendingOrderProducts, descendingOrderProducts } from '../../store/sli
 
 const ToOrderProducts = () => {
 
-    const dispatch = useDispatch()
+  const dispatch = useDispatch()
 
-const handleAscending = () => {
+  const handleAscending = () => {
     dispatch(ascendingOrderProducts())
-}
+  }
 
-const handleDescending = () => {
+  const handleDescending = () => {
     dispatch(descendingOrderProducts())
-}
+  }
 
   return (
     <div>
