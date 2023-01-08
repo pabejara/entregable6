@@ -10,6 +10,8 @@ import { getUserCart } from './store/slices/cart.slice'
 import Header from './components/shared/Header'
 import Cart from './pages/Cart'
 import Purchases from './pages/Purchases'
+import ProtectedRoutes from './components/shared/ProtectedRoutes'
+import Footer from './components/shared/Footer'
 
 function App() {
 
@@ -45,10 +47,13 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/login' element={<Login />} />
-        <Route path='/cart' element={<Cart />} />
         <Route path='/product/:id' element={<ProductInfo />} />
-        <Route path='/purchases' element={<Purchases />} />
+        <Route element={<ProtectedRoutes />} >
+          <Route path='/cart' element={<Cart />} />
+          <Route path='/purchases' element={<Purchases />} />
+        </Route>
       </Routes>
+      <Footer />
     </div>
   )
 }

@@ -28,7 +28,7 @@ const handleAllProducts = () => {
 
 return (
         <section>
-            <h3>Categories</h3>
+            <h3>Select by Categories</h3>
             <ul>
                 <li  onClick={handleAllProducts}>All Products</li>
                 {

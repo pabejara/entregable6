@@ -1,0 +1,15 @@
+.login {
+    background-color: rgb(209, 203, 203);
+    height: 40px;
+    margin: 40px 250px;
+    padding: 10em;
+    text-align:center;
+    border-radius: 0.5em;
+}
+.logged {
+    margin-top: 40px;
+}
+.btn {
+    background-color: red;
+    color: white;
+}

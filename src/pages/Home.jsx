@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux'
 import CardProduct from '../components/Home/CardProduct'
 import FilterCategory from '../components/Home/FilterCategory'
 import FilterPrice from '../components/Home/FilterPrice'
+import ToOrderProducts from '../components/Home/ToOrderProducts'
 import './styles/home.css'
 
 const Home = () => {
@@ -32,9 +33,11 @@ const Home = () => {
 
     return (
         <div>
+            <h3 className='selection' >Select by word</h3>
             <input value={inputValue} onChange={handleChange} type="text" />
             <FilterPrice setInputPrice={setInputPrice} />
             <FilterCategory setInputValue={setInputValue}/>
+            <ToOrderProducts />
             <div className='products-container'>
                 {
                     productsFilter?.filter(filterCallBack).length !== 0 ?

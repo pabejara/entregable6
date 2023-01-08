@@ -4,6 +4,7 @@ import CartProduct from '../components/Cart/CartProduct'
 import getConfig from '../utils/getConfig'
 import { getUserCart } from '../store/slices/cart.slice'
 import { useDispatch, useSelector } from 'react-redux'
+import './styles/cart.css'
 
 
 
@@ -34,7 +35,7 @@ const Cart = () => {
 
   return (
     <section>
-      <h2>Cart</h2>
+      <h2 className='cart' >Cart</h2>
       <div>
         {
           cartProducts?.map(product => (

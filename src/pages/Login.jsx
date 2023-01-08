@@ -1,8 +1,12 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
+import { useNavigate } from 'react-router-dom'
+import './styles/login.css'
 
 const Login = () => {
+
+  const navigate = useNavigate()
 
   const [isLogged, setIsLogged] = useState(false)
 
@@ -15,6 +19,7 @@ const Login = () => {
         console.log(res.data.data);
         localStorage.setItem('token', res.data.data.token);
         setIsLogged(true)
+        navigate('/')
       })
       .catch((err) => console.log(err));
     reset({
@@ -27,16 +32,27 @@ const Login = () => {
     const condition = localStorage.getItem('token') ? true : false
     setIsLogged(condition)
   }, [])
+
+  const handleLogout = () => {
+    localStorage.removeItem('token')
+    setIsLogged(false)
+  }
   
   if(isLogged) {
-    <h1>User Logged </h1>
+    return (
+      <div>
+         <h3 className='logged' >User Logged👌</h3>
+         <button onClick={handleLogout} >Logout</button>
+      </div>
+    )
   }
 
-
   return (
-    <div>
-      <form onSubmit={handleSubmit(submit)}>
-        <div>
+    <div className='login'  >
+      <h3>Welcome! Enter your email and</h3>
+      <h3>password to continue</h3>
+      <form  onSubmit={handleSubmit(submit)} >
+        <div  >
           <label htmlFor="email">Email</label>
           <input type="text" id='email' {...register("email")} />
         </div>
@@ -44,8 +60,9 @@ const Login = () => {
           <label htmlFor="password">Password</label>
           <input type="password" id='password' {...register("password")} />
         </div>
-        <button>Login</button>
+        <button className='btn' >Login</button>
       </form>
+      <h5>Don't have an account? Sign up</h5>
     </div>
   )
 }
