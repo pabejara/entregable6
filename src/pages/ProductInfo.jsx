@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import CardProduct from '../components/Home/CardProduct'
-import ProductDescription from '../components/ProductInfo/ProductDescription'
+import ProductDescription from '../components/productInfo/ProductDescription'
 
 const ProductInfo = () => {
 
